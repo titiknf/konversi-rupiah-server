@@ -1,7 +1,7 @@
 <?php
 	header('Access-Control-Allow-Origin:*');
 
-	$id = $_GET['id'];
+	$id = isset($_GET['id']) ? $_GET['id'] : '';
 
 	$con = mysqli_connect("localhost","root","","konversi");
 
@@ -9,6 +9,11 @@
 
 		$sql = "delete from datauang where id='$id'";
 		$query = mysqli_query($con,$sql);
+
+
+if(!$sql){
+	printf("Error: %s\n", mysqli_error($con));
+}
 
 		if($query){
 			$status = "1";
