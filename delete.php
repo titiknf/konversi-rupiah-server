@@ -11,9 +11,9 @@
 		$query = mysqli_query($con,$sql);
 
 
-if(!$sql){
-	printf("Error: %s\n", mysqli_error($con));
-}
+// if(!$sql){
+// 	printf("Error: %s\n", mysqli_error($con));
+// }
 
 		if($query){
 			$status = "1";
